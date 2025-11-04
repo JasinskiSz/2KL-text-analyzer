@@ -37,4 +37,24 @@ function analyze() {
     // words = text.split(" ")
     // [0,   1,     2, 3, 4, 5, 6, 7, 8, 9]
     // [The, quick, ]
+
+
+    // jak wyliczyć ilość spacji w tekście?
+    // ustawiamy licznik spacji
+    let spaceCounter = 0;
+    // tworzymy pętle i ustawiamy warunek textTrimmed.length
+    // żeby nie przekroczyć długości Stringa - inaczej mówiąc
+    // pętla wykona się tyle razy, ile jest znaków w Stringu
+    for (let i = 0; i < textTrimmed.length; i++) {
+        // każdy znak wsadzamy do zmiennej character
+        const character = textTrimmed.charAt(i);
+        // sprawdzamy czy zmienna character zawiera spację
+        if (character === ' ') { // zauważ, że tutaj jest spacja pomiędzy apostrofami!
+            // jeżeli character to spacja,
+            // zwiększamy licznik spacji o 1
+            spaceCounter += 1
+        }
+    }
+    // teraz tylko wkładamy licznik spacji do HTMLa
+    document.getElementById("count-character").innerText = spaceCounter
 }
