@@ -7,13 +7,28 @@ document.getElementById("count-words").innerText = 0
 function analyze() {
     console.log("analizuję...")
 
-    // let wordCounter = 0;
+    // pobierz wartość (value) z elementu o id "user-input"
     const text = document.getElementById("user-input").value
     // const text = "abc abfdf asfasdf afsdf sadfsd"
+    // Funkcja trim() używana jest na String.
+    // Usuwa ona białe znaki (np. spacje) z końca i początku Stringa.
     const textTrimmed = text.trim()
-    // array - tablica
+    // array - czyli tablica
     const words = textTrimmed.split(" ")
 
+    // tablice można porównać do rzędu siedzeń w kinie - skupiamy się na pojedynczym rzędzie
+    // każdy taki rząd ma ponumerowane miejsca
+    // w programowaniu zazwyczaj takie rzędy zaczynamy liczyć od 0, a więc
+    // typowa tablica będzie wyglądać mniej więcej tak:
+    // [0, 1, 2, 3, 4] - tablica na 5 wartości (tutaj wypisane są tylko indeksy)
+    // indeksy to właśnie taki numer siedzenia.
+    // Na takim miejscu mogą znajdować się różne wartości.
+    // Tablicę można sobie wyobrazić ostatecznie w taki sposób:
+    // [0, 1, 2, 3, 4] - 5 miejsc w rzędzie, od 0 do 4
+    // [7, 4, 0, 8, 9] - 5 wartości, każda jest na jakimś miejscu
+
+    // wstawiamy do innerText długość tablicy "words".
+    // length użyte na tablicy zwraca jej długość, czyli ile posiada miejsc
     document.getElementById("count-words").innerText = words.length
 
     // To jest String
