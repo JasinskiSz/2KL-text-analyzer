@@ -2,6 +2,7 @@
 document.getElementById("count-words").innerText = 0
 document.getElementById("count-space").innerText = 0
 document.getElementById("count-character").innerText = 0
+document.getElementById("count-character-no-spaces").innerText = 0
 
 
 // funkcja nie wykona się, dopóki jej nie wywołamy.
@@ -65,4 +66,27 @@ function analyze() {
 
     // teraz tylko wkładamy licznik spacji do HTMLa
     document.getElementById("count-space").innerText = spaceCounter
+
+    // ----------------------------------------------
+    // liczba znaków włącznie ze spacjami i wszystkim
+    // ----------------------------------------------
+
+    document.getElementById("count-character").innerText = text.length
+
+    // ------------------------
+    // liczba znaków bez spacji
+    // ------------------------
+
+    let letterCounter = 0
+
+    for (let i = 0; i < textTrimmed.length; i++) {
+        const letter = textTrimmed.charAt(i);
+
+        if (letter !== ' ') {
+            letterCounter += 1
+        }
+    }
+
+    document.getElementById("count-character-no-spaces").innerText = letterCounter
+
 }
