@@ -46,13 +46,13 @@ function analyze() {
     // ustawiamy licznik spacji
     let spaceCounter = 0;
 
-    // tworzymy pętle i ustawiamy warunek textTrimmed.length
+    // tworzymy pętle i ustawiamy warunek text.length
     // żeby nie przekroczyć długości Stringa - inaczej mówiąc
     // pętla wykona się tyle razy, ile jest znaków w Stringu
-    for (let i = 0; i < textTrimmed.length; i++) {
+    for (let i = 0; i < text.length; i++) {
 
         // każdy znak wsadzamy do zmiennej character
-        const character = textTrimmed.charAt(i);
+        const character = text.charAt(i);
 
         // sprawdzamy czy zmienna character zawiera spację
         if (character === ' ') { // zauważ, że tutaj jest spacja pomiędzy apostrofami!
