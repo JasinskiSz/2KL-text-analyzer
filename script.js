@@ -1,6 +1,7 @@
 // to się wykona tylko raz, przy załadowaniu strony
 document.getElementById("count-words").innerText = 0
 document.getElementById("count-space").innerText = 0
+document.getElementById("count-character").innerText = 0
 
 
 // funkcja nie wykona się, dopóki jej nie wywołamy.
