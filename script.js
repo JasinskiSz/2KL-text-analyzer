@@ -77,16 +77,36 @@ function analyze() {
     // liczba znaków bez spacji
     // ------------------------
 
+    const letterCounter = countLettersWithoutSpace(textTrimmed)
+
+    document.getElementById("count-character-no-spaces").innerText = letterCounter
+
+    // --------------------
+    // czas czytania tekstu
+    // --------------------
+
+    const characterReadPerMinute = 200
+
+    const minutes = letterCounter / characterReadPerMinute
+    console.log(minutes)
+
+    const seconds = minutes * 60
+    console.log(seconds)
+
+    document.getElementById("read-time").innerText = seconds
+
+}
+
+function countLettersWithoutSpace(text) {
     let letterCounter = 0
 
-    for (let i = 0; i < textTrimmed.length; i++) {
-        const letter = textTrimmed.charAt(i);
+    for (let i = 0; i < text.length; i++) {
+        const letter = text.charAt(i);
 
         if (letter !== ' ') {
             letterCounter += 1
         }
     }
 
-    document.getElementById("count-character-no-spaces").innerText = letterCounter
-
+    return letterCounter
 }
